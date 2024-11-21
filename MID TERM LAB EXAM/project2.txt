@@ -1,0 +1,4 @@
+Semester 2: Weather Application
+Description: This project focuses on developing a weather application that fetches real-time weather data using an external API.
+ Built with JavaScript, HTML, and CSS, the app allows users to search for weather conditions by city and view forecasts. 
+ The project aims to enhance skills in API integration, asynchronous programming, and responsive design.

@@ -1,0 +1,5 @@
+Semester 1: Library Management System
+Description: This project involves creating a simple Library Management System using Python and a SQLite database.
+ The system allows users to add, remove, and search for books, as well as manage user accounts. 
+ The goal is to understand basic database operations, user authentication, and CRUD (Create, Read, Update, Delete) functionalities.
+

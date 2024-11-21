@@ -1,0 +1,5 @@
+
+Semester 3: E-Commerce Website
+Description: In this project, an e-commerce website is developed using a modern web framework like React or Django.
+ The site features user authentication, product listings, shopping cart functionality, and a checkout process. 
+ The aim is to apply knowledge of full-stack development, understand the dynamics of online shopping platforms, and implement best practices for web security.
