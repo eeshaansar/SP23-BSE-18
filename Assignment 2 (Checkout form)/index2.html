@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check out form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"> </script>
+    <script src="./javascript.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel = "stylesheet" href =".//checkout.css">
+    <link rel = "icon" href ="https://example.com/favicon.ico">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-white sticky-top d-flex flex-wrap ">
+
+        <div class=" head container-fluid d-flex flex-wrap justify-content-between my-1">
+          <!-- header -->
+          <ul class=" header navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fw-bold fs-6 text-dark"  href="https://www.hushpuppies.com.pk/collections/aw-2024"><small>New Arrivals</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold fs-6 text-dark " href="https://www.hushpuppies.com.pk/pages/men"><small>Men</small></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link fw-bold fs-6 text-dark" href="https://www.hushpuppies.com.pk/pages/women"><small>Women</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold fs-6 text-dark" href="https://www.hushpuppies.com.pk/pages/kids"><small>Kids</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold fs-6 text-dark" href="https://www.hushpuppies.com.pk/pages/accessories"><small>Accessories</small></a>
+            </li>
+           
+          </ul>
+          <div class="logo">
+             <a href="https://www.hushpuppies.com.pk/"> <img src=".//images/logo.webp" alt="Hushpuppies" ></a> 
+          </div>
+          <div class="icons">
+            <i class="fa-solid fa-magnifying-glass ms-3"></i>
+            <i class="fa-regular fa-face-grin ms-3"></i>
+            <i class="fa-regular fa-heart ms-3"></i>
+            <i class="fa-solid fa-bag-shopping ms-3"></i>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+<!-- checkout form -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6"> <!-- Set the form width to 6 out of 12 columns for consistency -->
+            <span class="d-flex justify-content-center fs-5 mb-5 ">-------CHECKOUT FORM-------</span>
+            <form class="row g-3"> <!-- Use g-3 for a consistent spacing between elements -->
+                
+                <div class="row">
+                    <div class="col-md-6"> <!-- First Name takes half the width of the form -->
+                        <label for="inputname1" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstname">
+                        <p id="errorMessage1" class="pt-1"></p>
+                    </div>
+                    <div class="col-md-6"> <!-- Last Name takes half the width of the form -->
+                        <label for="inputname2" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastname">
+                        <p id="errorMessage2"  class="pt-1"> </p>
+
+                    </div>
+                </div>
+                
+                <div class="col-12"> <!-- Full width Email field -->
+                    <label for="inputemail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email">
+                    <p id="errorMessage3"  class="pt-1"> </p>
+
+                </div>
+                <div class="col-12"> <!-- Full width Address field -->
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address">
+                    <p id="errorMessage4"  class="pt-1"> </p>
+
+                </div>
+                <div class="col-12"> <!-- Full width City field -->
+                    <label for="inputCity" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city">
+                    <p id="errorMessage5"  class="pt-1"> </p>
+
+                </div>
+                
+                <div class="col-12"> <!-- Full width Submit Button -->
+                    <button type="submit" class="submit btn btn-dark w-100 mt-4">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- footer -->
+    <span class=" sent d-flex flex-wrap justify-content-center  align-items-center pt-5 pb-3 fs-10">RECIEVE EXCLUSIVE PROMOTIONS, PRIVATE SALES AND NEWS</span>
+    <div class=" container d-flex justify-content-center align-items-center mt-3">
+      
+    </div>
+  
+  </div>
+  
+  
+  
+  <div  class=" footer container-fluid mt-5 mb-5  ">
+    <ul class=" list d-flex flex-wrap justify-content-center align-items-center pe-5 list-unstyled gap-4">
+      <li>My Account</li>
+      <li>Customer Services</li>
+      <li>Returns & Exchanges</li>
+      <li>Bulk Orders</li>
+      <li>About Us</li>
+      <li>Blogs</li>
+      <li><img  src=".//images/giftkarte.webp" alt="giftkarte"></li>
+    </ul>
+  
+  </div>
+   <div class="icons gap-4 d-flex justify-content-center align-items-center  ">
+    <i class="fa-brands fa-facebook" ></i>
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fa-brands fa-tiktok"></i>
+  
+  
+   </div>
+   
+   <br>
+   <div class=" copyright d-flex flex-column  justify-content-center align-items-center  mt-5">
+    <p >Copyright © 2023 Hush Puppies all rights reserved.</p>
+      <p >Tech by Ozeefy</p>
+   </div>
+   
+</body>
+</html>
