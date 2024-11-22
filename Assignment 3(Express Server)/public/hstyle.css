@@ -1,0 +1,318 @@
+*{
+    font-family: Helvetica, sans-serif,Arial ;
+  }
+  .logo{
+    margin-right: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important; 
+    align-items: center
+  }
+   .f1 {
+    width: 25%;
+   }
+   .mt-10{
+    margin-top:35%;
+  
+   }
+   .access{
+    width: 10px;
+   }
+   .btn{
+    width: 12%;
+    font-size: 15px;
+    transition: transform 1.0s ease; 
+   }
+  /* --hover effect on image and button-- */
+  .btn:hover {
+    transform: translateY(-15px);
+  }
+  .hush{
+    transition: filter 0.3s ease; 
+  }
+  .hush:hover {
+    filter: brightness(0.5); 
+  }
+  .img {
+    transition: filter 0.3s ease; 
+  }
+  
+  .img:hover{
+    filter: brightness(0.5); 
+    
+  }
+  @media (max-width:1497px){
+    .mt-10{
+      margin-top:32%;
+     }
+     .btn{
+      width: 15%;
+      font-size: 10px;
+     }
+  }
+  @media (max-width:900px){
+   
+     .footer{
+      margin-left: 30px;
+   }
+   .copyright{
+    font-size: small; 
+   }
+   .sent{
+    font-size: small;
+   }
+  
+  }
+  
+  @media (max-width:800px){
+    .mt-10{
+      margin-top:32%;
+     }
+     .btn{
+      width: 15%;
+      font-size: 10px;
+     }
+     .footer{
+      margin-left: 20px;
+   }
+   .header
+   {
+    display: none;
+    
+   }
+   .logo{
+    display: inline;
+    flex-direction:row;
+    align-items: center;
+    margin-left: 40%;
+  }
+  .list{
+    text-align: center !important;
+    font-size: small;
+   }
+   .sent{
+    font-size: small;
+   }
+  
+  }
+  
+  @media (max-width:768px) {
+  .icons{
+    display: none;
+  }
+  
+  .f1{
+    height: auto;
+    width: 41%;
+  }
+  .copyright{
+    font-size: small; 
+   }
+   .sent{
+    font-size: small;
+   }
+  
+  }
+  
+  @media (max-width:572px) {
+    .btn{
+      width: 15%;
+      font-size: 10px;
+     }
+     
+     .footer{
+        margin-left: 20px;
+     }
+     .header
+     {
+      display: none;
+     }
+     .head{
+         margin-left: -9%;
+   
+     }
+     .logo{
+      display:flex ;
+      flex-direction: row;
+      justify-content: center;
+      align-self :center !important;
+    }
+    .men{
+      margin-top:47%;
+     }
+     .kids{
+      margin-top:95%;
+     }
+     .access{
+      margin-top:95%;
+     }
+     .women{
+      margin-top:48%;
+     }
+     .f1{
+      height: auto;
+      width: 70%;
+    }
+    .copyright{
+      font-size: small; 
+     }
+     .list{
+      text-align: center !important;
+      font-size: small;
+     }
+     .sent{
+      font-size: small;
+     }
+    
+  }
+  
+  
+  @media (max-width:500px){
+    .sent{
+  
+  text-align: center  !important;
+  }
+  
+  }
+  @media (max-width:425px){
+    
+    .men{
+      margin-top:45%;
+     }
+     .kids{
+      margin-top:95%;
+     }
+     .access{
+      margin-top:95%;
+     }
+     .women{
+      margin-top:48%;
+     }
+     .logo{
+      margin-left:20%;
+      align-items: center;
+     }
+     .head{
+      margin-left: 3%;
+  
+  
+  }
+  .list{
+    text-align: center !important;
+    font-size: small;
+   }
+  .copyright{
+    font-size: small; 
+   }
+  .f1{
+    height: auto;
+    width: 80%;
+  }
+  .sent{
+    font-size: small;
+   }
+  
+  }
+  @media (max-width:375px){
+  .copyright{
+    text-align: center !important;
+    font-size: small;
+  }
+  .men{
+    margin-top:45%;
+   }
+   .kids{
+    margin-top:95%;
+   }
+   .access{
+    margin-top:95%;
+    margin-right: 10%;
+   }
+   .women{
+    margin-top:42%;
+   }
+   .btn{
+    width: 20%;
+   }
+  
+   .head{
+    margin-left: 34%;
+  }
+  .list{
+    text-align: center !important;
+    font-size: small;
+   }
+   .sent{
+    font-size: small;
+   }
+  
+  
+   .last{
+    font-size:medium;
+   }
+   .f1{
+    width: 70%;
+   }
+   
+  }
+  @media(max-width:320px){
+  .logo{
+    width: 1%;
+    height: auto;
+  }
+  .men{
+    margin-top:40%;
+   }
+   .kids{
+    margin-top:90%;
+   }
+   .access{
+    margin-top:90%;
+    margin-right: 10%;
+   }
+   .women{
+    margin-top:38%;
+   }
+   .btn{
+    width: 25%;
+   }
+   .list{
+    text-align: center !important;
+    font-size: small;
+   }
+   .sent{
+    font-size: small;
+   }
+  
+  
+   .last{
+    font-size:x-small;
+   }
+   .copyright{
+    font-size: small; 
+   }
+   .f1{
+    width: 85%;
+   }
+  }
+  @media(max-width:200px){
+  .logo{
+    display: none;
+  }
+  }
+  @media(max-width:142px){
+    .men{
+      margin-top:35%;
+     }
+     .kids{
+      margin-top:85%;
+     }
+     .access{
+      margin-top:85%;
+      margin-right: 10%;
+     }
+     .women{
+      margin-top:332%;
+     }
+  }
+  
