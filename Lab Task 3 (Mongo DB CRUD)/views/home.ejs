@@ -1,0 +1,33 @@
+
+</head>
+<body>
+<div class="container text-center mt-5">
+  <h1 class="mb-4">Hello Admin!</h1>
+  <p class="lead">What do you want to do today?</p>
+  
+</div>
+<style>
+    .dropdown .btn {
+        width: 200px; /* Ensure buttons have consistent width */
+    }
+    .dropdown-menu {
+        margin-top: 0; /* Align the menu flush with the button */
+    }
+  </style>
+  <div class="mt-4">
+    <div class="d-flex justify-content-center gap-4">
+        <!-- Dropdown for Product -->
+        <div class="btn">
+            <button class="btn btn-warning btn-lg " type="button" id="btn"onclick="window.location.href='/admin/products/read';" data-bs-toggle="dropdown" aria-expanded="false">
+                Manage Product
+            </button>
+        </div>
+        <div class="btn">
+            <button class="btn btn-warning btn-lg " type="button" id="btn"onclick="window.location.href='/admin/categories/read';" data-bs-toggle="dropdown" aria-expanded="false">
+                Manage Category
+            </button>
+        </div>
+        
+    </div>
+</div>
+  

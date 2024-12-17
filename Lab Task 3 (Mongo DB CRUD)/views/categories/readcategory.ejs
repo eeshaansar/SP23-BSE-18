@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <h2 class="text-center">Categories</h2>
+    <table class="table table-bordered table-striped mt-3">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% categories.forEach((category, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= category.name %></td>
+                    <td>
+                        <% if (category.image) { %>
+                            <img src="<%= category.image %>" alt="<%= category.name %> Image" width="100">
+                        <% } else { %>
+                            <span>No Image</span>
+                        <% } %>
+                    </td>
+                    <td>
+                        <a href="/admin/categories/edit/<%= category._id %>" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/admin/categories/delete/<%= category._id %>" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+ 
+    
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex gap-5 pb-5">
+            <button class="btn btn-warning btn-lg" type="button" onclick="window.location.href='/admin/categories/add';">
+                Add new Category
+            </button>
+            <button class="btn btn-warning btn-lg" type="button" onclick="window.location.href='/user/home/main';">
+                Check on website
+            </button>
+        </div>
+        
+        <button class="btn btn-dark text-light btn-lg" type="button" onclick="window.location.href='/';">
+            Back
+        </button>
+    </div>
+    
+</div>
+
+
+<%- contentFor("readcategory") %>

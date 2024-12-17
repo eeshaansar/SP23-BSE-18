@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="/admin/products/create" method="post" enctype="multipart/form-data" class="row d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
+                <!-- Name -->
+                <div class="col-12">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+
+                <!-- Color -->
+                <div class="col-12">
+                    <label for="color" class="form-label">Color</label>
+                    <input type="text" name="color" class="form-control" id="color" required>
+                </div>
+
+                <!-- Size -->
+                <div class="col-12">
+                    <label for="size" class="form-label">Size</label>
+                    <input type="text" name="size" class="form-control" id="size" required>
+                </div>
+
+                <!-- Description -->
+                <div class="col-12">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" name="description" class="form-control" id="description" required>
+                </div>
+
+                <!-- Price -->
+                <div class="col-12">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" name="price" class="form-control" id="price" required>
+                </div>
+
+                <!-- Image -->
+                <div class="col-12">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" name="image" class="form-control" id="image" required>
+                </div>
+
+                <!-- Category -->
+                <div class="col-12">
+                    <label for="category" class="form-label">Category</label>
+                    <select name="category" class="form-control" id="category" required>
+                        <option value="" disabled selected>Select a Category</option>
+                        <% categories.forEach(category => { %>
+                            <option value="<%= category._id %>"><%= category.name %></option>
+                        <% }); %>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-6">
+                    <button type="submit" class="btn btn-dark w-100 mt-4">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <button class="btn btn-danger btn-lg" type="button" onclick="window.location.href='/admin/products/read';">Back</button>
+    </div>
+</div>
+
+
+
+<%- contentFor("addproducts")%>

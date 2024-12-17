@@ -1,0 +1,109 @@
+<div class="container py-5">
+  <div class="side-by-side">
+    <!-- Right Side: Product Details (Moved to Left Side) -->
+    <div class="left-panel product-details">
+      <h5 class="mb-3"><b>Color: </b><span class="fw-bold"><%= product.color %></span></h5>
+
+      <!-- Size Selection -->
+      <h6 class="mb-2"><b>Size: </b></h6>
+          <%= product.size %>
+      </p>
+
+      <!-- price Selection -->
+      <h6 class="mb-2"><b>Price: </b></h6>
+          <%= product.price %>
+      </p>
+
+      <!-- Description -->
+      <h6 class="mb-2"><b>Description: </b></h6>
+        <%= product.description %>
+      </p>
+      <button class="btn btn-warning btn-lg" type="button" onclick="window.location.href='/user/home/main';">
+        Add to cart  <i class="fa-solid fa-cart-shopping"></i>
+
+    </button>
+    <button class="btn btn-danger btn-lg" type="button" onclick="window.location.href='/user/home/category/<%= category._id %>';">
+      Back 
+
+  </button>
+    </div>
+    
+    <!-- Left Side: Product Image and Thumbnails (Moved to Right Side) -->
+    <div class="right-panel">
+      <div class="mb-2">
+        <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+<!-- CSS Styling -->
+<style>
+   .product-image-container {
+    max-width: 100px; /* Set the desired width of the container */
+    max-height: 100px; /* Set the desired height of the container */
+    margin: auto; /* Center the container */
+  }
+
+  .product-image {
+    width: 100%; /* Ensure the image fits the container width */
+    height: 100%; /* Ensure the image fits the container height */
+    object-fit: cover; /* Maintain aspect ratio and crop excess if needed */
+    border-radius: 8px; /* Optional for rounded corners */
+    border: 1px solid #ddd; /* Optional border for better visuals */
+  }
+  .side-by-side {
+    display: flex;
+    gap: 20px; /* Adds spacing between panels */
+    flex-direction: row-reverse; /* Switches order of panels */
+  }
+
+  .product-image {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .thumbnail-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .thumbnail-image.opacity-25 {
+    opacity: 0.6;
+  }
+
+  .size-option {
+    padding: 5px 10px;
+    margin: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .size-option.selected {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+
+  .left-panel {
+    flex: 1;
+  }
+
+  .right-panel {
+    flex: 1;
+  }
+</style>
+
+
+<%- contentFor("item") %>

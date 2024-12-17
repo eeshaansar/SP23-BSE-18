@@ -1,0 +1,261 @@
+
+<style>
+  .category-image {
+    width: 100%; /* Ensures it scales with the card width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Maintains aspect ratio and crops excess */
+    border-radius: 5px; /* Optional for rounded corners */
+  }
+</style>
+    <!-- section 2 -->
+<div id="demo" class="carousel slide flex-wrap" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators ">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active bg-dark"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1" class="bg-dark"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2" class="bg-dark"></button>
+
+  </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/images/shoe.webp" alt="slide_shoe1" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/s2.webp" alt="slide_shoe2" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/s3.webp" alt="slide_shoe3" class="d-block w-100">
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+
+
+<div class="container-fluid d-flex flex-wrap mx-auto">
+  <% for (let i = 0; i < categories.length; i += 2) { %>
+    <div class="row w-100 mb-4">
+      <!-- First Category (Men's Shoes) -->
+      <div class="col-12 col-sm-6 d-flex justify-content-center bg-white p-1 align-items-stretch">
+        <div class="category-card d-flex flex-column w-100 h-100">
+          <img src="<%= categories[i].image %>" alt="<%= categories[i].name %>" class="img img-fluid category-image">
+          <a href="/user/home/category/<%= categories[i]._id %>" class="btn btn-light fw-bold rounded-0 position-absolute justify-content-center align-items-center category-btn">
+            <%= categories[i].name %> 
+
+          </a>
+        </div>
+      </div>
+
+      <!-- Second Category (Kids' Shoes) -->
+      <% if (categories[i + 1]) { %>
+        <div class="col-12 col-sm-6 d-flex justify-content-center bg-white p-1 align-items-stretch">
+          <div class="category-card d-flex flex-column w-100 h-100">
+            <img src="<%= categories[i + 1].image %>" alt="<%= categories[i + 1].name %>" class="img img-fluid category-image">
+            <a href="/user/home/category/<%= categories[i + 1]._id %>" class="btn btn-light fw-bold rounded-0 position-absolute justify-content-center align-items-center category-btn">
+              <%= categories[i + 1].name %> 
+            </a>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  <% } %>
+</div>
+
+
+
+</div>
+
+<!-- --section 4--   -->
+
+ <div class="hush container-fluid flex-wrap ">
+  <div class="col-12 "><img src="/images/hushpuppies.webp " class="img-fluid w-100"> </div>
+</div>
+ <!-- section 5  -->
+ <div class="  d-flex flex-column flex-wrap justify-content-center align-items-center mt-5  ">
+  <p class=" last fs-5  " ><b>LAST CHANCE UPTO 50% OFF </b></p>
+  <p class="text-danger">VIEW ALL</p>
+</div>
+
+
+
+
+
+<!-- Carousel -->
+<div id="demo" class="carousel slide  carousel-dark " data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators ">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active "></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1" ></button>
+
+  </div>
+   <!-- The slideshow/carousel -->
+ <div class="carousel-inner">
+    <div class="carousel-item active">
+ <!-- --slide 1-- -->
+  <div class="d-flex flex-row flex-wrap">
+    <!-- shoe 1 -->
+    <div class="col-3">
+      <img src="/images/shoe1.webp" alt="Brian Flexmax Shoe" class="img-fluid w-100">
+      <div class="description d-flex flex-column justify-content-center align-items-center">
+        <div><span>Brian Flexmax</span></div>
+        <div>
+          <span><del>Rs.9,999.00</del></span>
+          <span class="text-danger">Rs.7,699.00</span>
+        </div>
+      </div>
+    </div>
+    <!-- shoe 2 -->
+    <div class="col-3">
+      <img src="/images/shoe2.webp" alt="Brian Flexmax Shoe" class="img-fluid w-100">
+      <div class="description d-flex flex-column justify-content-center align-items-center">
+        <div><span>Brian Flexmax</span></div>
+        <div>
+          <span><del>Rs.9,999.00</del></span>
+          <span class="text-danger">Rs.7,699.00</span>
+        </div>
+      </div>
+    </div>
+    <!-- shoe 3 -->
+    <div class="col-3">
+      <img src="/images/shoe3.webp" alt="Brian Flexmax Shoe" class="img-fluid w-100">
+      <div class="description d-flex flex-column justify-content-center align-items-center">
+        <div><span>Brian Flexmax</span></div>
+        <div>
+          <span><del>Rs.9,999.00</del></span>
+          <span class="text-danger">Rs.7,699.00</span>
+        </div>
+      </div>
+    </div>
+    <!-- shoe 4 -->
+    <div class="col-3">
+      <img src="/images/shoe4.webp" alt="Brian Flexmax Shoe" class="img-fluid w-100">
+      <div class="description d-flex flex-column justify-content-center align-items-center">
+        <div><span>Brian Flexmax</span></div>
+        <div>
+          <span><del>Rs.9,999.00</del></span>
+          <span class="text-danger">Rs.7,699.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    <div class="carousel-item">
+         <!-- --slide 1-- -->
+      <div class="d-flex flex-row flex-wrap">
+        <!-- shoe 1 -->
+        <div class="col-3">
+          <img src="/images/shoe5.webp" alt="Brian Flexmax Shoe" class="img-fluid w-100">
+          <div class="description d-flex flex-column justify-content-center align-items-center">
+            <div><span>Brian Flexmax</span></div>
+            <div>
+              <span><del>Rs.9,999.00</del></span>
+              <span class="text-danger">Rs.7,699.00</span>
+            </div>
+          </div>
+        </div>
+        <!-- shoe 2 -->
+        <div class="col-3">
+          <img src="/images/shoe6.webp" alt="Brian Flexmax Shoe" class="img-fluid w-100">
+          <div class="description d-flex flex-column justify-content-center align-items-center">
+            <div><span>Brian Flexmax</span></div>
+            <div>
+              <span><del>Rs.9,999.00</del></span>
+              <span class="text-danger">Rs.7,699.00</span>
+            </div>
+          </div>
+        </div>
+        <!-- shoe 3 -->
+        <div class="col-3">
+          <img src="/images/shoe7.webp" alt="Brian Flexmax Shoe" class="img-fluid w-100">
+          <div class="description d-flex flex-column justify-content-center align-items-center">
+            <div><span>Brian Flexmax</span></div>
+            <div>
+              <span><del>Rs.9,999.00</del></span>
+              <span class="text-danger">Rs.7,699.00</span>
+            </div>
+          </div>
+        </div>
+        <!-- shoe 4 -->
+        <div class="col-3">
+          <img src="/images/shoe8.webp" alt="Brian Flexmax Shoe" class="img-fluid w-100">
+          <div class="description d-flex flex-column justify-content-center align-items-center">
+            <div><span>Brian Flexmax</span></div>
+            <div>
+              <span><del>Rs.9,999.00</del></span>
+              <span class="text-danger">Rs.7,699.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+   
+  </div>
+
+ <!-- Left and right controls/icons -->
+ <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon"></span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+  <span class="carousel-control-next-icon"></span>
+</button>
+</div>
+
+  <br>
+  <br>
+  <br>
+  <style>
+/* Ensure the category card containers are stretched to equal height */
+.category-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px; /* Increased height */
+}
+
+.category-image {
+  object-fit: cover; /* Make sure images cover the container without distortion */
+  flex-grow: 1; /* Ensure the image takes up all available space in the container */
+  min-height: 350px; /* Ensure the image takes up more space */
+}
+
+.category-btn {
+  position: absolute;
+  bottom: 10px; /* Position the button at the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px; /* Adjust button padding for a larger button */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for visibility */
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 0;
+}
+
+/* Make sure the column with the image stretches correctly */
+.d-flex.align-items-stretch {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+    
+  </style>
+
+  <%- contentFor("main")%>
