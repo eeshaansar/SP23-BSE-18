@@ -1,0 +1,17 @@
+
+<div class="container my-5">
+  <h2 class="text-center text-success">Order Placed Successfully!</h2>
+  
+  <% if (successMessage.length > 0) { %>
+    <div class="alert alert-success text-center">
+      <%= successMessage[0] %>
+    </div>
+  <% } %>
+
+  <div class="text-center mt-4 mt-">
+    <h3><p>Thank you for shopping with us.</p></h3>
+    <h3><p> Your order has been placed and is being processed.</p></h3>
+    <a href="/" class="btn btn-warning">Return to Shopping</a>
+  </div>
+</div>
+<%- contentFor("placedproduct") %>

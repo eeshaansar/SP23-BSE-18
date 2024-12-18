@@ -88,6 +88,9 @@ app.use("/search", searchRoute);
 const cart = require("./routes/admin/addtocart.routes");
 app.use("/addtocart", cart); 
 
+const ordersRoute = require('./routes/admin/orders.routes');
+app.use('/admin/orders', ordersRoute);
+
 //mongodb connection
 const dbc= require("./db");
 

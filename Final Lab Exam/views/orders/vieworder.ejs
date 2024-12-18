@@ -1,0 +1,29 @@
+<div class="container my-5">
+    <h2 class="text-center mb-4">Order List</h2>
+    
+    <!-- Orders Table -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Total Amount</th>
+                <th scope="col">Order Date & Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% orders.forEach(order => { %>
+                <tr>
+                    <td><%= order.customer.name %></td>
+                    <td><%= `${order.customer.street}, ${order.customer.city}, ${order.customer.postalCode}, ${order.customer.country}` %></td>
+                    <td>$<%= order.total.toFixed(2) %></td>
+                    <td><%= new Date(order.date).toLocaleString() %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<%- contentFor("viewOrder") %>
+
+

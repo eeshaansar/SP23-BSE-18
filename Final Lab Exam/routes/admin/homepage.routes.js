@@ -108,4 +108,5 @@ router.get("/details/:categoryId/:productId", async (req, res) => {
   }
 });
 
+
 module.exports = router;
