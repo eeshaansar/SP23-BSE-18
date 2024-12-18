@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .signup-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        margin-top: 50px;
+    }
+    .signup-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .btn-warning {
+        width: 100%;
+        background-color: #f1c40f;
+        border-color: #f1c40f;
+        color: black;
+    }
+    .btn-warning:hover {
+        background-color: #e5b700;
+        border-color: #e5b700;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Signup</h2>
+    
+    <div class="d-flex justify-content-center mt-4">
+      <a href="/user/signup?role=admin" class="btn btn-warning mx-2">Admin</a>
+      <a href="/user/signup?role=user" class="btn btn-warning mx-2">User</a>
+    </div>
+
+    <form action="/user/signup" method="POST" class="mt-4">
+      <input type="hidden" name="role" value="<%= role %>"> 
+      <% if (role === 'admin') { %>
+        <div class="mb-3">
+          <label for="adminCode" class="form-label">Admin Code</label>
+          <input type="text" class="form-control" id="adminCode" name="adminCode" placeholder="Enter Admin Code" required>
+        </div>
+      <% } %>
+
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+      </div>
+      <div class="mb-3">
+        <label for="confirmpassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm your password" required>
+      </div>
+
+      <button type="submit" class="btn btn-warning">
+        <%= role === 'admin' ? 'Signup as Admin' : 'Signup as User' %>
+      </button>
+       <div class="text-center mt-3">
+        <p>Already have an account? <a href="/user/login">Login here</a></p>
+    </div>
+    </form>
+  </div>
+</body>
+</html>
+
+  <%- contentFor("signup")%>

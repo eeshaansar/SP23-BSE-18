@@ -1,0 +1,167 @@
+<style>
+    .shoe-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        flex: 0 0 auto;
+        width: 300px;
+        height: 400px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .shoe-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .shoe-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .shoe-row {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1.5rem;
+        overflow-x: auto;
+        padding: 0.5rem 0;
+    }
+
+    .shoe-card .card-body {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 150px;
+    }
+
+    .shoe-card .card-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .shoe-card .card-text {
+        font-size: 1rem;
+        color: #6c757d;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .pagination a {
+        padding: 5px 10px;
+        margin: 0 5px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        color: #007bff;
+    }
+
+    .pagination a:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .pagination a.active {
+        background-color: #007bff;
+        color: white;
+    }
+</style>
+
+<form action="/user/home/category/<%= category._id %>" method="GET" class="d-flex justify-content-center mt-4">
+    <div class="input-group" style="max-width: 500px; width: 100%;">
+        <input 
+            type="text" 
+            name="query" 
+            class="form-control shadow-sm" 
+            placeholder="Search for products..." 
+            value="<%= query || '' %>" 
+            style="border-top-left-radius: 20px; border-bottom-left-radius: 20px;"
+        />
+        <button 
+            class="btn btn-warning text-white shadow-sm" 
+            type="submit" 
+            style="border-top-right-radius: 20px; border-bottom-right-radius: 20px;"
+        >
+            <i class="fas fa-search"></i> Search
+        </button>
+    </div>
+</form>
+
+<div class="filter-options mt-4">
+    <form action="/user/home/category/<%= category._id %>" method="GET" class="d-flex justify-content-center align-items-center">
+        <div class="form-group d-flex align-items-center">
+            <label for="min-price" class="mr-2 text-dark">Min Price:</label>
+            <input 
+                type="number" 
+                name="minPrice" 
+                id="min-price" 
+                class="form-control rounded-pill mr-3" 
+                placeholder="0"
+                value="<%= minPrice || '' %>"
+                style="width: 120px;"
+            >
+        </div>
+
+        <div class="form-group d-flex align-items-center">
+            <label for="max-price" class="mr-2 text-dark">Max Price:</label>
+            <input 
+                type="number" 
+                name="maxPrice" 
+                id="max-price" 
+                class="form-control rounded-pill mr-3" 
+                placeholder="1000"
+                value="<%= maxPrice || '' %>"
+                style="width: 120px;"
+            >
+        </div>
+
+        <button class="btn btn-warning text-white rounded-pill px-4" type="submit">
+            <i class="fas fa-filter"></i> Apply Filters
+        </button>
+    </form>
+</div>
+
+<div class="container my-5">
+    <h1 class="text-center mb-4"> <%= category.name %> </h1>
+    <div class="shoe-row flex flex-wrap">
+        <% products.forEach(product => { %>
+            <div>
+                <a onclick="window.location.href='/user/home/details/<%= category._id %>/<%= product._id %>';" class="text-decoration-none">  
+                    <div class="card shoe-card">
+                        <img src="<%= product.image %>" alt="<%= product.name %>" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-dark"><%= product.name %></h5>
+                            <p class="text-muted">$<%= product.price %></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <% }) %>
+    </div>
+
+    <div class="pagination d-flex justify-content-center mt-4">
+        <% if (currentPage > 1) { %>
+            <a href="/user/home/category/<%= category._id %>?page=<%= currentPage - 1 %>&limit=<%= limit %>&query=<%= query || '' %>&minPrice=<%= minPrice || '' %>&maxPrice=<%= maxPrice || '' %>" class="btn btn-outline-primary">Previous</a>
+        <% } %>
+        
+        <% for (let i = 1; i <= totalPages; i++) { %>
+            <a href="/user/home/category/<%= category._id %>?page=<%= i %>&limit=<%= limit %>&query=<%= query || '' %>&minPrice=<%= minPrice || '' %>&maxPrice=<%= maxPrice || '' %>" 
+                <%= i === currentPage ? 'class="active"' : '' %>><%= i %></a>
+        <% } %>
+
+        <% if (currentPage < totalPages) { %>
+            <a href="/user/home/category/<%= category._id %>?page=<%= currentPage + 1 %>&limit=<%= limit %>&query=<%= query || '' %>&minPrice=<%= minPrice || '' %>&maxPrice=<%= maxPrice || '' %>" class="btn btn-outline-primary">Next</a>
+        <% } %>
+    </div>
+</div>
+
+<%- contentFor("menshoes") %>
