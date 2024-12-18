@@ -1,0 +1,42 @@
+
+<!--flash msg -->
+<% if (success_msg && success_msg.length > 0) { %>
+    <div class="alert alert-success">
+      <%= success_msg %>
+    </div>
+  <% } %>
+<div class="container text-center mt-5">
+  <h1 class="mb-4">Hello Admin!</h1>
+  <p class="lead">What do you want to do today?</p>
+
+  <div class="mt-4">
+    <div class="d-flex justify-content-center gap-4">
+        <div class="btn">
+            <button class="btn btn-warning btn-lg" type="button" onclick="window.location.href='/admin/products/read';">
+                Manage Product
+            </button>
+        </div>
+        <div class="btn">
+            <button class="btn btn-warning btn-lg" type="button" onclick="window.location.href='/admin/categories/read';">
+                Manage Category
+            </button>
+        </div>
+    </div>
+  </div>
+
+ 
+
+</div>
+
+<style>
+    .dropdown .btn {
+        width: 200px; 
+    }
+    .dropdown-menu {
+        margin-top: 0;
+    }
+</style>
+
+</body>
+
+<%- contentFor("adminpanel") %> 

@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <h2>Edit User</h2>
+    <form action="/edit/<%= user._id %>" method="POST">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" value="<%= user.username %>" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" value="<%= user.password %>" required>
+      </div>
+      <div class="mb-3">
+        <label for="confirmpassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" value="<%= user.confirmpassword %>" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+  <%- contentFor("editusersignup")%>
