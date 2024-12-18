@@ -1,0 +1,91 @@
+<style>
+    .shoe-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        flex: 0 0 auto; /* Consistent card behavior */
+        width: 300px; /* Increased card width */
+        height: 400px; /* Increased card height */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden; /* Ensures no content overflow */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .shoe-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .shoe-card img {
+        width: 100%; /* Full card width */
+        height: 250px; /* Increased image height */
+        object-fit: cover; /* Crops images neatly */
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .shoe-row {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1.5rem; /* Slightly larger gap between cards */
+        overflow-x: auto; /* Enables horizontal scrolling */
+        padding: 0.5rem 0;
+    }
+
+    .shoe-card .card-body {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 150px; /* Adjusted body height */
+    }
+
+    .shoe-card .card-title {
+        font-size: 1.2rem; /* Slightly larger title */
+        margin-bottom: 0.5rem;
+    }
+
+    .shoe-card .card-text {
+        font-size: 1rem;
+        color: #6c757d; /* Muted color for price */
+    }
+</style>
+<form action="/search/find" method="GET" class="search-form d-flex justify-content-center mt-4">
+    <div class="input-group" style="max-width: 500px; width: 100%;">
+        <input 
+            type="text" 
+            name="query" 
+            class="form-control shadow-sm" 
+            placeholder="Search for products..." 
+            required 
+            style="border-top-left-radius: 20px; border-bottom-left-radius: 20px;"
+        />
+        <button 
+            class="btn btn-warning text-white shadow-sm" 
+            type="submit" 
+            style="border-top-right-radius: 20px; border-bottom-right-radius: 20px;"
+        >
+            <i class="fas fa-search"></i> Search
+        </button>
+    </div>
+</form>
+
+<div class="container my-5">
+    <h1 class="text-center mb-4"> <%= category.name %> </h1>
+    <div class="shoe-row flex flex-wrap">
+        <% products.forEach(product => { %>
+            <div>
+                <a onclick="window.location.href='/user/home/details/<%= category._id %>/<%= product._id %>';" class="text-decoration-none">  
+                    <div class="card shoe-card">
+                        <img src="<%= product.image %>" alt="<%= product.name %>" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-dark"><%= product.name %></h5>
+                            <p class="text-muted">$<%= product.price %></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- contentFor("menshoes") %>

@@ -1,0 +1,74 @@
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="mb-4">Hello Admin!</h1>
+    <p class="lead">What do you want to do today?</p>
+ 
+</div>
+<div class="col-md-9 mx-auto mt-5">
+    <% if (products.length > 0) { %>
+    <h1 class="mb-4 text-center">All Products</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-center custom-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Color</th>
+                    <th>Size</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(val => { %>
+                    <tr>
+                        <td><%= val.name %></td>
+                        <td><%= val.category ? val.category.name : 'No Category' %></td>
+                        <td><%= val.color %></td>
+                        <td><%= val.size %></td>
+                        <td><%= val.description %></td>
+                        <td>Rs.<%= val.price %></td>
+                        <td>
+                            <% if (val.image) { %>
+                                <img src="<%= val.image %>" alt="<%= val.name %> Image" width="100">
+                            <% } else { %>
+                                <span>No Image</span>
+                            <% } %>
+                        </td>
+                        
+                        <td>
+                            <a href="/admin/products/edit/<%= val._id %>" class="btn btn-sm btn-success">Edit</a>
+                        </td>
+                        <td>
+                            <a href="/admin/products/delete/<%= val._id %>" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                        
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <% } else { %>
+        <h1 class="text-center">No Products Yet</h1>
+    <% } %> 
+</div>
+
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <div class="d-flex gap-5 pb-5">
+        <button class="btn btn-warning btn-lg" type="button" onclick="window.location.href='/admin/products/Add';">
+            Create New Product
+        </button>
+        <button class="btn btn-warning btn-lg" type="button" onclick="window.location.href='/user/home/main';">
+            Check on website
+        </button>
+    </div>
+    
+    <button class="btn btn-dark text-light btn-lg" type="button" onclick="window.location.href='/user/admin';">
+        Back
+    </button>
+</div>
+
+
+<%- contentFor("readproducts") %>

@@ -1,0 +1,33 @@
+*{
+    font-family: Helvetica, sans-serif,Arial ;
+  }
+
+   .f1 {
+    width: 25%;
+   }
+   .mt-10{
+    margin-top:35%;
+  
+   }
+   .form-label {
+    margin-bottom: 0.25rem; 
+    font-size: 0.85rem; 
+}
+
+.form-control {
+    padding: 0.25rem; 
+    font-size: 0.85rem;
+    height: auto; 
+}
+
+
+.row {
+    margin-bottom: 0.5rem; 
+}
+ 
+.error{
+    color: red;
+}
+.valid{
+    color: greenyellow;
+}
